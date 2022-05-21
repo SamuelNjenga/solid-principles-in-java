@@ -14,4 +14,18 @@ public class AreaCalculator {
         }
         return sum;
     }
+
+    // DOES NOT USE SINGLE RESPONSIBILITY PRINCIPLE
+
+    // print result of sum as a json object
+    public String json(List<Object> shapes) {
+        String res = String.format("{sum: %s}", Integer.toString(sum(shapes)));
+        return res;
+    }
+
+    // print result of sum as csv
+    public String csv(List<Object> shapes) {
+        String res = String.format("sum, %s", Integer.toString(sum(shapes)));
+        return res;
+    }
 }
