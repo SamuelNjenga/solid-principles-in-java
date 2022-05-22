@@ -1,7 +1,16 @@
 import java.util.List;
 
 public class ShapesPrinter {
-    private AreaCalculator areaCalculator = new AreaCalculator();// depends on actual concrete class
+    // private AreaCalculator areaCalculator = new AreaCalculator();// depends on actual concrete class
+
+    // Dependency Injection
+    private final IAreaCalculator areaCalculator;
+
+    public ShapesPrinter(IAreaCalculator areaCalculator) {
+        this.areaCalculator = areaCalculator;
+    }
+
+    // Instead of depending on concrete, we depend on abstraction.
 
     // print result of sum as a json object
     public String json(List<Shape> shapes) {
