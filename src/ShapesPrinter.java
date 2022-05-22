@@ -1,15 +1,17 @@
 import java.util.List;
 
 public class ShapesPrinter {
+    private AreaCalculator areaCalculator = new AreaCalculator();// depends on actual concrete class
+
     // print result of sum as a json object
-    public String json(int sum) {
-        String res = String.format("{shapesSum: %s}", Integer.toString(sum));
+    public String json(List<Shape> shapes) {
+        String res = String.format("{shapesSum: %s}", Integer.toString(areaCalculator.sum(shapes)));
         return res;
     }
 
     // print result of sum as csv
-    public String csv(int sum) {
-        String res = String.format("shapes_sum, %s", Integer.toString(sum));
+    public String csv(List<Shape> shapes) {
+        String res = String.format("shapes_sum, %s", Integer.toString(areaCalculator.sum(shapes)));
         return res;
     }
 }
