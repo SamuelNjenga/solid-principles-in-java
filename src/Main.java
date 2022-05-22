@@ -5,10 +5,13 @@ public class Main {
         AreaCalculator areaCalculator = new AreaCalculator();
         Circle circle = new Circle(10);
         Square square = new Square(10);
-        Cube cube = new Cube();
+        Shape cube = new Cube();
         Rectangle rectangle = new Rectangle();
+        Shape noShape = new NoShape();
+        System.out.println(square instanceof Shape);
+        System.out.println(noShape instanceof Shape);
         ShapesPrinter printer = new ShapesPrinter();
-        List<Shape> shapes = List.of(circle, square, cube, rectangle);
+        List<Shape> shapes = List.of(circle, square, cube, rectangle,noShape);
         int sum = areaCalculator.sum(shapes);
         System.out.println("sum = " + sum);
         System.out.println(printer.json(sum));
