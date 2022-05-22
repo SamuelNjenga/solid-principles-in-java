@@ -11,7 +11,7 @@ public class Main {
         System.out.println(square instanceof Shape);
         System.out.println(noShape instanceof Shape);
         ShapesPrinter printer = new ShapesPrinter();
-        List<Shape> shapes = List.of(circle, square, cube, rectangle,noShape);
+        List<Shape> shapes = List.of(circle, square, cube, rectangle);
         int sum = areaCalculator.sum(shapes);
         System.out.println("sum = " + sum);
         System.out.println(printer.json(sum));
